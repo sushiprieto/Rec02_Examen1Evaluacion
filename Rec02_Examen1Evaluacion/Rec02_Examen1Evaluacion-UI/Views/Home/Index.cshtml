@@ -1,0 +1,40 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm())
+        {
+
+            //Creo dos variables de sesion para el id y otra para el nick
+            //Primero hay que aceptar el id y el nick y luego se pasa a la vista detalles
+
+            //Mostramos el id de la sesion actual
+            @Session.SessionID
+
+            <p>
+                <label>ID:</label>
+                <input type="text" name="txtId" />
+            </p>
+
+
+            <p>
+                <label>Nick:</label>
+                <input type="text" name="txtNick" />
+            </p>
+
+            <input type="submit" value="Buscar" name="btnAceptar" />
+
+        }
+    </div>
+</body>
+</html>
