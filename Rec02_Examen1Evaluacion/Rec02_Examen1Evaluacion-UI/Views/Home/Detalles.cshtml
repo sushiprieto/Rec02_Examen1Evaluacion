@@ -1,4 +1,5 @@
-﻿
+﻿@model ENT.clsPersona
+
 @{
     Layout = null;
 }
@@ -12,6 +13,48 @@
 </head>
 <body>
     <div> 
+
+        <p>
+            <h1>Hola, @Session["nick"]</h1>
+        </p>
+
+        <hr />
+
+        <p>
+            @Html.DisplayNameFor(model => model.nombre)
+            :
+            @Html.DisplayFor(model => model.nombre)
+        </p>
+
+        <p>
+            @Html.DisplayNameFor(model => model.apellidos)
+            :
+            @Html.DisplayFor(model => model.apellidos)
+        </p>
+
+        <p>
+            @Html.DisplayNameFor(model => model.fechaNac)
+            :
+            @Html.DisplayFor(model => model.fechaNac)
+        </p>
+
+        <p>
+            @Html.DisplayNameFor(model => model.direccion)
+            :
+            @Html.DisplayFor(model => model.direccion)
+        </p>
+
+        <p>
+            @Html.DisplayNameFor(model => model.telefono)
+            :
+            @Html.DisplayFor(model => model.telefono)
+        </p>
+
     </div>
+
+    <p>
+        @Html.ActionLink("Volver", "Index")
+    </p>
+
 </body>
 </html>

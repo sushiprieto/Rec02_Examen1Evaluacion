@@ -43,9 +43,9 @@ namespace Rec02_Examen1Evaluacion_UI.Controllers
                 clsPersona per = oManejadoraPersonaBL.getPersona(idPersona);
 
                 if (per != null)
-                    return View("Details", per);
+                    return View("Detalles", per);
                 else
-                    return View("ErrorID", idPersona);
+                    return View("ErrorId", idPersona);
             }
             catch (Exception)
             {
@@ -56,7 +56,18 @@ namespace Rec02_Examen1Evaluacion_UI.Controllers
 
         public ActionResult Detalles(int id)
         {
-            return View();
+            clsPersona p;
+
+            try
+            {
+                clsManejadoraPersonaBL oManejadoraPersonaBL = new clsManejadoraPersonaBL();
+                p = oManejadoraPersonaBL.getPersona(id);
+                return View(p);
+            }
+            catch (Exception)
+            {
+                return View("Error");
+            }
         }
     }
 }
